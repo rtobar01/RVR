@@ -23,7 +23,7 @@ int main (int argc, char* argv[]) {
         char host [NI_MAXHOST];
         getnameinfo(it->ai_addr, it->ai_addrlen, host, NI_MAXHOST, NULL, 0, NI_NUMERICHOST);
         if(host != "\0")
-            printf("IP: %d\tFamilia: %d\tTipo: %d\n", host, it->ai_family, it->ai_socktype);
+            printf("IP: %s\tFamilia: %d\tTipo: %d\n", host, it->ai_family, it->ai_socktype);
     }
 
     return 0;
