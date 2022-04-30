@@ -104,6 +104,52 @@ void ChatServer::do_messages()
 
          // - MESSAGE: Reenviar el mensaje a todos los clientes (menos el emisor)
 
+
+
+        std::unique_ptr<ChatMessage> obj(new ChatMessage());
+
+        Socket cliente;
+
+        socket->recv(obj, cliente);
+
+        obj.get()->from_bin();
+
+        if (obj.get()->type == ChatMessage::LOGIN) clients.push_back(std::move(obj.get()));
+
+        else if (obj.get()->type == ChatMessage::LOGOUT)
+
+        {
+
+            std::vector<std::unique_ptr<Socket>>::iterator it = clients.begin();
+
+            while (it != clients.end() && *it.get() != cliente)
+
+            {
+
+                it++;
+
+            }
+
+            if (it != clients.end()) clients.erase(it);
+
+        }
+
+        else if (obj.get()->type == ChatMessage::MESSAGE)
+
+        {
+
+            for (auto clienteSocket : clientes)
+
+            {
+
+                if (clienteSocket != cliente)
+
+                    socket.send(obj, clienteSocket);
+
+            }
+
+        }
+
     }
 
 }
