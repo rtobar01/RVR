@@ -84,9 +84,15 @@ int Socket::send(Serializable& obj, const Socket& sock)
 
     char buffer[MAX_MESSAGE_SIZE];
 
+    char* aux = obj.data();
+
     obj.to_bin();
 
-    ssize_t bytes = ::sendto(sd, obj.data, MAX_MESSAGE_SIZE, 0, &sa, &sa_len);
+    aux = obj.data();
+
+    strcpy(buffer, aux);
+
+    ssize_t bytes = ::sendto(sd, buffer, MAX_MESSAGE_SIZE, 0, &sa, sa_len);
 
 
 
@@ -118,7 +124,7 @@ bool operator== (const Socket& s1, const Socket& s2)
 
     if (s1.sa.sa_family != s2.sa.sa_family) return false;
 
-    if (s1.sa != s2.sa) return false;
+    if (s1.sa.sa_data != s2.sa.sa_data) return false;
 
     return true;
 

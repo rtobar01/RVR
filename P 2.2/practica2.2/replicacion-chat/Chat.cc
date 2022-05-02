@@ -26,9 +26,9 @@ void ChatMessage::to_bin()
 
     memcpy(aux, &type, sizeof(uint8_t));
 
-    aux += sizeof(uint8_t)
+    aux += sizeof(uint8_t);
 
-        memcpy(aux, &nick, 8);
+    memcpy(aux, &nick, 8);
 
     aux += 8;
 
@@ -54,7 +54,7 @@ int ChatMessage::from_bin(char* bobj)
 
     char* aux = _data;
 
-    memcpy(type, aux, sizeof(uint8_t));
+    memcpy(&type, aux, sizeof(uint8_t));
 
     aux += sizeof(char) * sizeof(uint8_t);
 
@@ -108,13 +108,11 @@ void ChatServer::do_messages()
 
         std::unique_ptr<ChatMessage> obj(new ChatMessage());
 
-        Socket cliente;
+        Socket* cliente;
 
-        socket->recv(obj, cliente);
+        socket.recv(*obj.get(), cliente);
 
-        obj.get()->from_bin();
-
-        if (obj.get()->type == ChatMessage::LOGIN) clients.push_back(std::move(obj.get()));
+        if (obj.get()->type == ChatMessage::LOGIN) clients.push_back(std::unique_ptr<Socket>(std::move(cliente)));
 
         else if (obj.get()->type == ChatMessage::LOGOUT)
 
@@ -122,7 +120,7 @@ void ChatServer::do_messages()
 
             std::vector<std::unique_ptr<Socket>>::iterator it = clients.begin();
 
-            while (it != clients.end() && *it.get() != cliente)
+            while (it != clients.end() && !(*it->get() == *cliente))
 
             {
 
@@ -138,13 +136,13 @@ void ChatServer::do_messages()
 
         {
 
-            for (auto clienteSocket : clientes)
+            for (int i = 0; i < clients.capacity(); i++)
 
             {
 
-                if (clienteSocket != cliente)
+                if (clients[i].get() != cliente)
 
-                    socket.send(obj, clienteSocket);
+                    socket.send(*obj.get(), *clients[i]);
 
             }
 
@@ -186,7 +184,17 @@ void ChatClient::logout()
 
 {
 
-    // Completar
+    std::string msg;
+
+
+
+    ChatMessage em(nick, msg);
+
+    em.type = ChatMessage::LOGOUT;
+
+
+
+    socket.send(em, socket);
 
 }
 
@@ -202,7 +210,33 @@ void ChatClient::input_thread()
 
         // Leer stdin con std::getline
 
+        std::string msg;
+
+        std::getline(std::cin, msg);
+
         // Enviar al servidor usando socket
+
+        if (msg == "LOGIN") login();
+
+        else if (msg == "LOGOUT") logout();
+
+        else
+
+        {
+
+
+
+            ChatMessage em(nick, msg);
+
+            em.type = ChatMessage::MESSAGE;
+
+
+
+            socket.send(em, socket);
+
+        }
+
+
 
     }
 
@@ -220,7 +254,17 @@ void ChatClient::net_thread()
 
         //Recibir Mensajes de red
 
+        ChatMessage obj;
+
+        Socket* cliente;
+
+        socket.recv(obj, cliente);
+
         //Mostrar en pantalla el mensaje de la forma "nick: mensaje"
+
+        //obj.from_bin();
+
+        std::cout << obj.nick << ": " << obj.message;
 
     }
 
