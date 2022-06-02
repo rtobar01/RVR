@@ -1,0 +1,215 @@
+# depslib dependency file v1.0
+1654102688 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/main.cpp
+	"Game.h"
+	<iostream>
+	<string>
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/Game.h
+	<array>
+	<fstream>
+	"GameObject.h"
+	"GameMap.h"
+	"Chat.h"
+
+1654197861 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/GameObject.h
+	"Vector2.h"
+	"Texture.h"
+	"Serializable.h"
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/Vector2.h
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/Texture.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	<iostream>
+	"SDL2/SDL_error.h"
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/Serializable.h
+	<stdlib.h>
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/GameMap.h
+	"Texture.h"
+
+1654193169 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/Chat.h
+	<string>
+	<unistd.h>
+	<string.h>
+	<vector>
+	<memory>
+	"Serializable.h"
+	"Socket.h"
+	"GameObject.h"
+	"SerializableObject.h"
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/Socket.h
+	<sys/socket.h>
+	<sys/types.h>
+	<netdb.h>
+	<iostream>
+	<stdexcept>
+	<ostream>
+	<errno.h>
+	<string.h>
+	<stdio.h>
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/SerializableObject.h
+	"Serializable.h"
+	<memory>
+	<unistd.h>
+	<stdio.h>
+	<string.h>
+
+1654197054 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/Chat.cpp
+	"Chat.h"
+
+1654196579 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/ChatClient.cpp
+	<thread>
+	"Chat.h"
+
+1654102688 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/ChatServer.cpp
+	"Chat.h"
+
+1654197918 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/Game.cpp
+	"Game.h"
+	"SDL2/SDL_error.h"
+	<string>
+
+1654102688 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/GameMap.cpp
+	"GameMap.h"
+	"Game.h"
+
+1654197861 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/GameObject.cpp
+	"GameObject.h"
+	"Game.h"
+
+1654102688 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/Network.cpp
+	"Network.h"
+	"Socket.h"
+
+1654102688 /home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/include/Network.h
+
+1654102688 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/SerializableObject.cpp
+	"SerializableObject.h"
+
+1654193677 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/Socket.cpp
+	<string.h>
+	"Serializable.h"
+	"SerializableObject.h"
+	"Socket.h"
+
+1654102688 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/Texture.cpp
+	"Texture.h"
+
+1654102688 source:/home/usuarioso/Desktop/PFinalRoy/PracticaFinalRedes/src/Vector2.cpp
+	"Vector2.h"
+
+1654208481 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/Chat.cpp
+	"Chat.h"
+
+1654208615 /home/usuarioso/Desktop/PracticaFinalRedes/include/Chat.h
+	<string>
+	<unistd.h>
+	<string.h>
+	<vector>
+	<memory>
+	"Socket.h"
+	"GameObject.h"
+	"SerializableObject.h"
+
+1654070288 /home/usuarioso/Desktop/PracticaFinalRedes/include/Serializable.h
+	<stdlib.h>
+
+1654070288 /home/usuarioso/Desktop/PracticaFinalRedes/include/Socket.h
+	<sys/socket.h>
+	<sys/types.h>
+	<netdb.h>
+	<iostream>
+	<stdexcept>
+	<ostream>
+	<errno.h>
+	<string.h>
+	<stdio.h>
+
+1654209224 /home/usuarioso/Desktop/PracticaFinalRedes/include/GameObject.h
+	"Vector2.h"
+	"Texture.h"
+	"Serializable.h"
+
+1654070288 /home/usuarioso/Desktop/PracticaFinalRedes/include/Vector2.h
+
+1654070288 /home/usuarioso/Desktop/PracticaFinalRedes/include/Texture.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	<iostream>
+	"SDL2/SDL_error.h"
+
+1654206493 /home/usuarioso/Desktop/PracticaFinalRedes/include/SerializableObject.h
+	"Serializable.h"
+	<memory>
+	<unistd.h>
+	<stdio.h>
+	<string.h>
+
+1654208490 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/ChatClient.cpp
+	<thread>
+	"Chat.h"
+
+1654070288 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/ChatServer.cpp
+	"Chat.h"
+
+1654208582 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/Game.cpp
+	"Game.h"
+	"SDL2/SDL_error.h"
+	<string>
+
+1654209284 /home/usuarioso/Desktop/PracticaFinalRedes/include/Game.h
+	<array>
+	<fstream>
+	"GameObject.h"
+	"GameMap.h"
+	"Network.h"
+
+1654204521 /home/usuarioso/Desktop/PracticaFinalRedes/include/GameMap.h
+	"Texture.h"
+
+1654204503 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/GameMap.cpp
+	"GameMap.h"
+	"Game.h"
+
+1654165460 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/GameObject.cpp
+	"GameObject.h"
+	"Game.h"
+
+1654209057 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/Network.cpp
+	"Network.h"
+
+1654208836 /home/usuarioso/Desktop/PracticaFinalRedes/include/Network.h
+	<string>
+	<unistd.h>
+	<string.h>
+	<vector>
+	<memory>
+	"Socket.h"
+	"GameObject.h"
+	"SerializableObject.h"
+
+1654070288 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/SerializableObject.cpp
+	"SerializableObject.h"
+
+1654205948 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/Socket.cpp
+	<string.h>
+	"Serializable.h"
+	"SerializableObject.h"
+	"Socket.h"
+
+1654070288 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/Texture.cpp
+	"Texture.h"
+
+1654070288 source:/home/usuarioso/Desktop/PracticaFinalRedes/src/Vector2.cpp
+	"Vector2.h"
+
+1654208375 source:/home/usuarioso/Desktop/PracticaFinalRedes/main.cpp
+	"Game.h"
+	<iostream>
+	<string>
+

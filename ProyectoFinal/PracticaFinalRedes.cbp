@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PracticaFinalRedes" />
+		<Option execution_dir="/home/usuarioso/Desktop/pfinal v2/PracticaFinalRedes" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/PracticaFinalRedes" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin/Debug" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/PracticaFinalRedes" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Linker>
+			<Add option="-lSDL2 -lSDL2_image" />
+		</Linker>
+		<Unit filename="include/Game.h" />
+		<Unit filename="include/GameMap.h" />
+		<Unit filename="include/GameObject.h" />
+		<Unit filename="include/Network.h" />
+		<Unit filename="include/Serializable.h" />
+		<Unit filename="include/SerializableObject.h" />
+		<Unit filename="include/Socket.h" />
+		<Unit filename="include/Texture.h" />
+		<Unit filename="include/Vector2.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/GameMap.cpp" />
+		<Unit filename="src/GameObject.cpp" />
+		<Unit filename="src/Network.cpp" />
+		<Unit filename="src/SerializableObject.cpp" />
+		<Unit filename="src/Socket.cpp" />
+		<Unit filename="src/Texture.cpp" />
+		<Unit filename="src/Vector2.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
